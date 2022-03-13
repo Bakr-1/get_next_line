@@ -12,7 +12,7 @@
 
 #include "get_next_line.h"
 
-size_t	strlength(char *str)
+size_t	strlength(const char *str)
 {
 	int	i;
 
@@ -22,14 +22,18 @@ size_t	strlength(char *str)
 	return (i);
 }
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(const char *s1, const char *s2)
 {
 	char	*str;
 	char	*s;
 
-	if (!s1)
-		s[0] = '\0';
-	str = malloc(sizeof(char) * (strlength((char *)s2) + strlength((char *)s1) + 1));
+	if (!s1 && !s2)
+		return (NULL);
+	else if (!s1)
+		return (ft_strdup(s2));
+	else if (!s2)
+		return (ft_strdup(s1));
+	str = malloc((strlength(s2) + strlength(s1) + 1));
 	if (!str)
 		return (NULL);
 	s = str;
@@ -41,7 +45,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (s);
 }
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	char	*dst;
 	int		i;

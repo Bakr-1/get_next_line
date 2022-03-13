@@ -13,12 +13,12 @@
 #include "get_next_line.h"
 #define BUFFER_SIZE 500
 
-char    *read_line(char *str)
+char	*read_line(char *str)
 {
 	int i;
 	int x;
 	char *s;
-	
+
 	i = 0;
 	x = 0;
 	while (str[i] != '\n' && str[i] != '\0')
@@ -68,9 +68,11 @@ char *get_next_line(int fd)
 	return (str);
 }
 
-int main()
+int	main()
 {
-	int fd = open("text.txt", O_RDONLY);
+	int	fd;
+
+	fd = open("text.txt", O_RDONLY);
 	get_next_line(fd);
-	//get_next_line(fd);    
+	//get_next_line(fd);
 }
