@@ -6,7 +6,7 @@
 /*   By: aalseri <aalseri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:41:32 by aalseri           #+#    #+#             */
-/*   Updated: 2022/03/22 11:43:15 by aalseri          ###   ########.fr       */
+/*   Updated: 2022/03/27 21:28:37 by aalseri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,13 @@ char	*ft_strnl(char *s)
 {
 	if (!s)
 		return (NULL);
-	while (*s != '\n')
-	{
+	while (*s++ != '\n')
 		if (*s == '\0')
 			return (0);
-		s++;
-	}
-	return ((char *)s);
+	return (s);
 }
 
-char	*stringdup(char *s)
+char	*extra_read(char *s)
 {
 	char	*str;
 	int		i;

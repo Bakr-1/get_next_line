@@ -6,13 +6,13 @@
 /*   By: aalseri <aalseri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:41:38 by aalseri           #+#    #+#             */
-/*   Updated: 2022/03/22 11:41:52 by aalseri          ###   ########.fr       */
+/*   Updated: 2022/03/27 21:33:58 by aalseri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*get_str(char *s)
+char	*ret_nl(char *s)
 {
 	char	*str;
 	int		i;
@@ -35,7 +35,7 @@ char	*get_str(char *s)
 	return (str);
 }
 
-char	*get_read(int fd, char *s)
+char	*first_read(int fd, char *s)
 {
 	char	*str;
 	ssize_t	i;
@@ -65,11 +65,11 @@ char	*get_next_line(int fd)
 
 	if (fd == -1 || BUFFER_SIZE <= 0)
 		return (NULL);
-	s = get_read(fd, s);
+	s = first_read(fd, s);
 	if (!s)
 		return (NULL);
-	str = get_str(s);
-	s = stringdup(s);
+	str = ret_nl(s);
+	s = extra_read(s);
 	return (str);
 }
 

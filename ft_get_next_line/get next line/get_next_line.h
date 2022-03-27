@@ -6,7 +6,7 @@
 /*   By: aalseri <aalseri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:41:40 by aalseri           #+#    #+#             */
-/*   Updated: 2022/03/22 11:41:44 by aalseri          ###   ########.fr       */
+/*   Updated: 2022/03/27 21:34:03 by aalseri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@
 
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strnl(char *s);
-char	*get_read(int fd, char *s);
+char	*first_read(int fd, char *s);
 char	*get_next_line(int fd);
-char	*stringdup(char *s);
-char	*get_str(char *s);
+char	*extra_read(char *s);
+char	*ret_nl(char *s);
 size_t	ft_strlen(char *s);
 char	*ft_free(char **s);
 
