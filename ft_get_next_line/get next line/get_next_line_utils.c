@@ -1,21 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: aalseri <aalseri@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/22 11:41:32 by aalseri           #+#    #+#             */
+/*   Updated: 2022/03/22 11:43:15 by aalseri          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "get_next_line.h"
 
-// size_t	ft_strlen(char *str)
-// {
-// 	size_t	i;
-
-// 	i = 0;
-// 	while (*str++)
-// 		i++;
-// 	return (i);
-// }
-
-size_t     ft_strlen(char *str)
+size_t	ft_strlen(char *str)
 {
-    if (*str == 0)
-        return (0);
-    return (ft_strlen(str + 1) + 1);
+	if (*str == 0)
+		return (0);
+	return (ft_strlen(str + 1) + 1);
 }
 
 char	*ft_free(char **str)
