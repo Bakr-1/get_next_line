@@ -1,4 +1,0 @@
-as
-hello ghgh
-asda
-This is a long line to test the get next line code well
